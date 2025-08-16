@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-style: italic;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.to-animate {
+  animation: scale 0.7s 1 forwards;
+}
+
+.bento__container {
+  padding: 3em 1em;
+  display: grid;
+  row-gap: 3em;
+  grid-template-columns: 1fr;
+}
+.bento__accent--yellow {
+  color: hsl(39, 100%, 71%);
+}
+.bento__accent--purple {
+  color: hsl(256, 67%, 59%);
+  font-style: italic;
+}
+.bento__italic {
+  font-style: italic;
+}
+.bento__brick {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  transform: scale(0.95);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.bento__brick--social {
+  align-items: center;
+  padding: 3em 2em;
+  text-align: center;
+  background-color: hsl(256, 67%, 59%);
+  color: hsl(0, 0%, 100%);
+}
+.bento__brick--social .bento__img {
+  margin: 2em 0 0.8em;
+  width: min(100%, 170px);
+}
+.bento__brick--accounts {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0 10px rgba(46, 46, 46, 0.0823529412);
+  animation-delay: 0.1s;
+}
+.bento__brick--accounts .bento__img {
+  margin-block-end: 2em;
+  width: min(100%, 350px);
+}
+.bento__brick--yellow-schedule {
+  padding: 2em 2em 0;
+  background-color: hsl(39, 100%, 71%);
+  animation-delay: 0.15s;
+}
+.bento__brick--yellow-schedule .bento__img {
+  position: relative;
+  top: 1.5em;
+  width: min(60%, 240px);
+}
+.bento__brick--purple-schedule {
+  background-color: hsl(254, 88%, 90%);
+  animation-delay: 0.2s;
+}
+.bento__brick--purple-schedule .bento__subtitle {
+  text-align: center;
+}
+.bento__brick--purple-schedule .bento__img {
+  margin: 2em 0;
+  width: min(100%, 350px);
+}
+.bento__brick--followers {
+  background-color: hsl(256, 67%, 59%);
+  align-items: center;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  animation-delay: 0.1s;
+}
+.bento__brick--followers .bento__img {
+  width: min(70%, 280px);
+  margin-block-end: 4em;
+}
+.bento__brick--audience {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0 10px rgba(46, 46, 46, 0.0823529412);
+  animation-delay: 0.25s;
+}
+.bento__brick--audience .bento__text {
+  text-align: left;
+  margin: 0.8em 0 1.5em;
+}
+.bento__brick--audience .bento__img {
+  width: min(100%, 170px);
+}
+.bento__brick--post {
+  padding: 3em 2em;
+  background-color: hsl(31, 66%, 93%);
+  align-items: flex-start;
+  animation-delay: 0.05s;
+}
+.bento__brick--post .bento__img {
+  margin-block-start: 2em;
+  width: min(70%, 170px);
+}
+.bento__brick--ai {
+  background-color: hsl(39, 100%, 71%);
+  animation-delay: 0.27s;
+}
+.bento__brick--ai .bento__img {
+  margin-block-start: 2em;
+  width: min(100%, 250px);
+}
+.bento__title {
+  font-weight: 500;
+}
+.bento__title--big {
+  font-size: clamp(3.5rem, 13.5vw, 6rem);
+  line-height: 90%;
+}
+.bento__title--small {
+  line-height: 90%;
+  font-size: clamp(2.8rem, 6.5vw, 3.6rem);
+}
+.bento__subtitle {
+  font-size: clamp(1.7rem, 6vw, 2.6rem);
+  font-weight: 550;
+  line-height: 90%;
+}
+.bento__subtitle--black {
+  color: hsl(0, 0%, 7%);
+}
+.bento__text {
+  font-size: clamp(1.6rem, 4vw, 1.7rem);
+  line-height: 100%;
+  text-align: center;
+}
+.bento__number {
+  font-size: clamp(3.5rem, 13.5vw, 6rem);
+}
+.bento__number strong {
+  font-weight: 400;
+}
+
+@media (500px <= width) {
+  .bento__brick {
+    padding: 4em 2em;
+  }
+  .bento__brick--social {
+    padding: 5em 3em;
+  }
+  .bento__brick--yellow-schedule {
+    padding: 4em 2em 0;
+  }
+  .bento__brick--purple-schedule .bento__subtitle,
+  .bento__brick--purple-schedule .bento__text {
+    text-align: left;
+  }
+}
+@media (576px <= width) {
+  .bento__brick--ai .bento__img {
+    width: min(100%, 300px);
+  }
+}
+@media (700px <= width) {
+  .bento__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+  }
+  .bento__brick--social {
+    grid-column: 1/-1;
+  }
+  .bento__brick--accounts {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-content: space-between;
+  }
+  .bento__brick--yellow-schedule {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .bento__brick--yellow-schedule .bento__img {
+    top: 3em;
+  }
+  .bento__brick--audience {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .bento__brick--post {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  .bento__brick--purple-schedule {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  .bento__brick--followers {
+    grid-column: 1/-1;
+    grid-row: 5/6;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5em;
+    text-align: left;
+  }
+  .bento__brick--followers .bento__img {
+    margin: 0;
+  }
+  .bento__brick--ai {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+}
+@media (850px <= width) {
+  .bento__brick--social {
+    padding: 8em 4em;
+  }
+}
+@media (992px <= width) {
+  .bento__container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .bento__brick {
+    padding: 2em;
+  }
+  .bento__brick--social {
+    padding: 5em 2em;
+    grid-column: 2/4;
+  }
+  .bento__brick--accounts {
+    grid-column: 2/3;
+  }
+  .bento__brick--accounts .bento__img {
+    width: 270px;
+  }
+  .bento__brick--yellow-schedule {
+    position: relative;
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  .bento__brick--yellow-schedule .bento__img {
+    position: absolute;
+    width: min(80%, 165px);
+    top: unset;
+    bottom: -5em;
+  }
+  .bento__brick--post {
+    padding: 6em 2em 4em;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    height: 350px;
+  }
+  .bento__brick--purple-schedule {
+    grid-column: 4/5;
+    grid-row: 1/3;
+  }
+  .bento__brick--purple-schedule .bento__img {
+    width: 350px;
+  }
+  .bento__brick--audience {
+    grid-column: 2/3;
+  }
+  .bento__brick--ai {
+    grid-column: 1/2;
+    grid-row: 2/4;
+    margin-block-start: 7em;
+  }
+  .bento__brick--followers {
+    grid-column: 3/5;
+    grid-row: 3/4;
+    gap: 2em;
+  }
+  .bento__brick--followers .bento__img {
+    width: 200px;
+  }
+}
+@media (1100px <= width) {
+  .bento__container {
+    gap: 2.5em;
+  }
+  .bento__brick--ai {
+    margin-block-start: 6.5em;
+  }
+}
+@media (1200px <= width) {
+  .bento__brick--yellow-schedule .bento__img {
+    width: 190px;
+    bottom: -6em;
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=style.css.map */
